@@ -1,15 +1,17 @@
 package main
 
 import (
+	"golang-restapi/configs"
+	"golang-restapi/routes"
+
 	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
 	app := fiber.New()
+	configs.ConnectDB()
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.JSON(&fiber.Map{"data": "Hello5 from Fiber & mongoDB"})
-	})
+	routes.UserRoute(app)
 
-	app.Listen(":8080")
+	app.Listen(":6000")
 }
