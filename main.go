@@ -1,38 +1,15 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"github.com/gofiber/fiber/v2"
 )
 
-type todo struct {
-	ID        string `json:"id"`
-	Item      string `json:"title"`
-	Completed bool   `json:"completed"`
-}
-
-var todos = []todo{
-	{
-		ID:        "1",
-		Item:      "Clean Room",
-		Completed: false,
-	},
-	{
-		ID:        "2",
-		Item:      "Read Book",
-		Completed: false,
-	},
-}
-
-func getTodos(context *gin.Context) {
-	context.IndentedJSON(http.StatusOK, todos)
-}
-func addTodo(context *gin.Context) {
-	// var new
-}
 func main() {
-	router := gin.Default()
-	router.GET("/todos", getTodos)
-	router.Run("localhost:9090")
+	app := fiber.New()
+
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.JSON(&fiber.Map{"data": "Hello5 from Fiber & mongoDB"})
+	})
+
+	app.Listen(":8080")
 }
