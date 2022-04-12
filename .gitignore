@@ -7,3 +7,5 @@ node_modules
 *.test
 *.out
 go.work
+package-lock.json
+.vercel
