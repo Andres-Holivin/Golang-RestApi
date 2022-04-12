@@ -1,10 +1,9 @@
 module golang-restapi
 
-go 1.18
-
-require github.com/gofiber/fiber/v2 v2.31.0
+go 1.17
 
 require (
+	github.com/gofiber/fiber/v2 v2.31.0
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
