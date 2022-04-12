@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec go run api/main.go"
+    "setup": "yarn vercel login && yarn vercel link",
+    "start": "yarn vercel dev",
+    "dev": "yarn start"
   },
   "repository": {
     "type": "git",
